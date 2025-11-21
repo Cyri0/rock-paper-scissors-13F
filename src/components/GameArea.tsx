@@ -39,6 +39,13 @@ const GameArea = () => {
     }
   },[picked, machinePicked])
 
+  useEffect(()=>{
+    if(result === "player"){
+        const prev = Number(localStorage.getItem("score"))
+        localStorage.setItem("score", String(prev + 1))
+    }
+  },[result])
+
   return (
     <>
         {picked === undefined &&
@@ -56,7 +63,11 @@ const GameArea = () => {
             {picked === "scissors" && <RPSButton icon={scissors} color="gold" pickMove={()=>{}}/>}
             </>
         }
-        <h1>{result}</h1>
+        <h1 style={{color: "white"}}>
+            {result === "machine" && "YOU LOSE!"}
+            {result === "player" && "YOU WIN!"}
+            {result === "tie" && "TIE"}
+        </h1>
         {
             machinePicked !== undefined &&
             <>
@@ -64,6 +75,11 @@ const GameArea = () => {
             {machinePicked === "rock" && <RPSButton icon={rock} color="red" pickMove={()=>{}}/>}
             {machinePicked === "scissors" && <RPSButton icon={scissors} color="gold" pickMove={()=>{}}/>}
             </>
+        }
+        </div>
+        <div className="resultArea">
+        {
+            result && <button className="newGameBtn" onClick={()=>{window.location.reload()}}>NEW GAME</button>
         }
         </div>
     </>
