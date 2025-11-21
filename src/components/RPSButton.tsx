@@ -1,7 +1,12 @@
 
-const RPSButton = (props: {color: string, icon: string}) => {
+const RPSButton = (props: 
+    {color: string, 
+    icon: string,
+    pickMove: ()=>void},
+) => {
   return (
     <div 
+        onClick={props.pickMove}
         className="RPS-btn"
         style={{ 
             borderColor: `var(--${props.color})`,
