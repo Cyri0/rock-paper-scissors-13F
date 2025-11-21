@@ -120,3 +120,12 @@ body{
     right: 0;
   }
 }
+
+.resultArea{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
