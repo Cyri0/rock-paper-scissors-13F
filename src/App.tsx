@@ -1,6 +1,12 @@
+import GameArea from "./components/GameArea"
+import ScoreBar from "./components/ScoreBar"
+
 const App = () => {
   return (
-    <div>App</div>
+    <main>
+      <ScoreBar/>
+      <GameArea/>
+    </main>
   )
 }
 

@@ -13,16 +13,12 @@
   --breakpoint-desktop: 1366px;
 
   /* Primary */
-  --gold-500: hsl(39, 89%, 49%);
-  --gold-600: hsl(28, 76%, 44%);
-  --blue-500: hsl(230, 89%, 62%);
-  --blue-700: hsl(229, 64%, 46%);
-  --red-600: hsl(349, 71%, 52%);
-  --red-800: hsl(347, 75%, 35%);
-  --purple-600: hsl(261, 73%, 60%);
-  --purple-700: hsl(261, 51%, 44%);
-  --light-blue-400: hsl(189, 59%, 53%);
-  --light-blue-500: hsl(194, 58%, 42%);
+  --gold: hsl(39, 89%, 49%);
+  --gold-shade: hsl(28, 76%, 44%);
+  --blue: hsl(230, 89%, 62%);
+  --blue-shade: hsl(229, 64%, 46%);
+  --red: hsl(349, 71%, 52%);
+  --red-shade: hsl(347, 75%, 35%);
 
   /* Neutral */
   --navy-900: hsl(229, 25%, 31%);
@@ -33,4 +29,55 @@
   /* Background */
   --bg-radial-start: hsl(214, 47%, 23%);
   --bg-radial-end: hsl(237, 48%, 15%);
+}
+
+body{
+  background: radial-gradient(circle, var(--bg-radial-start),var(--bg-radial-end));
+}
+
+.scoreBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  border: 5px solid var(--gray-600);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  
+  .score{
+    background-color: #FBFBFB;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 10px;
+
+    span{
+      color: var(--blue-700-neutral);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .scoreNumber{
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--navy-900);
+    }
+  }
+}
+
+.RPS-btn{
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border-width: 20px;
+  background-color: #FAFAFA;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    transform: scale(1.5);
+  }
 }
