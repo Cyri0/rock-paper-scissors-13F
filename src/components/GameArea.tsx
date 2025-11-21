@@ -5,7 +5,7 @@ import scissors from "../../public/images/icon-scissors.svg"
 
 const GameArea = () => {
   return (
-    <div>
+    <div className="gameArea">
         <RPSButton icon={rock} color="red"/>
         <RPSButton icon={paper} color="blue"/>
         <RPSButton icon={scissors} color="gold"/>
